@@ -4,7 +4,10 @@
 
 ```
 #!/bin/bash
+```
+### Организуем защиту от повторных запусков
 
+```
 lockfile=/tmp/lockfile
 if ( set -o noclobber; echo "$$" > "$lockfile") 2> /dev/null;
 then
@@ -83,7 +86,10 @@ then
 								
 							}
 
+```
+### Собственно сам скрипт собранный из фунуций
 
+```
 
 			logfile=/home/stilet/otus/lesson7/access-4560-644067.log
 			echo $logfile
@@ -101,7 +107,10 @@ then
 			
 			cleaning
 			echo $LINE
+```
+### Завершающие действия
 
+```
 rm -f "$lockfile"
 	 trap - INT TERM EXIT
 	 exec bash
